@@ -1,11 +1,72 @@
-<!DOCTYPE html>
 <html>
-<head>
 <title>MooseCube</title>
-</head>
-<body>
-<center>
-<img src="moosecube.png" style="PADDING-RIGHT: 5px">
-</center>
-</body>
+<style>
+body {
+  background: black;
+  perspective: 2000px;
+  overflow: hidden;
+}
+section {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  transform-style: preserve-3d;
+}
+img {
+  position: absolute;
+  width: 480px;
+  left: -150px;
+  top: -100px;
+  transform: translateZ(10px);
+}
+div:nth-of-type(1) {
+  transform: translateZ(100px);
+}
+div:nth-of-type(2) {
+  transform: translateX(100px) rotateY(90deg) rotateZ(90deg);
+}
+div:nth-of-type(3) {
+  transform: translateY(-100px) rotateX(90deg) rotateZ(90deg);
+}
+div:nth-of-type(4) {
+  transform: translateY(100px) rotateX(-90deg) rotateZ(-90deg);
+}
+div:nth-of-type(5) {
+  transform: translateX(-100px) rotateY(-90deg) rotateZ(90deg);
+}
+div:nth-of-type(6) {
+  transform: translateZ(-100px) rotateX(180deg);
+}
+</style>
+<script>
+var x = 0, dx = Math.random(),
+    y = 0, dy = Math.random(),
+    z = 0, dz = Math.random();
+setInterval(function() {
+  x += dx; y += dy; z += dz;
+  document.getElementsByTagName('section')[0].style.transform =
+      'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)';
+}, 20);
+</script>
+<section>
+  <div><img src="http://moosecube.com/moosecube.png"></div>
+  <div><img src="http://moosecube.com/moosecube.png"></div>
+  <div><img src="http://moosecube.com/moosecube.png"></div>
+  <div><img src="http://moosecube.com/moosecube.png"></div>
+  <div><img src="http://moosecube.com/moosecube.png"></div>
+  <div><img src="http://moosecube.com/moosecube.png"></div>
+<section>
 </html>
